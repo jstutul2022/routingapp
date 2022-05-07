@@ -1,0 +1,42 @@
+﻿
+@model SevenExercise.Models.Employee
+
+            <section>
+                <h3>Employee Data</h3><hr />
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var emp in @ViewBag.Employees)
+                        {
+                        <tr>
+                            <th scope="row">@emp.Id</th>
+                            <td>@emp.FirstName</td>
+                            <td>@emp.LastName</td>
+                            <td>@emp.Email</td>
+                            <td>@emp.Gender</td>
+                            <td>@emp.Phone</td>
+                            <td>@emp.Age</td>
+                            <td>
+
+                                <a href="~/employees/@emp.Id" class="btn btn-primary">View Details</a>
+                            </td>
+                        </tr>
+                        }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
